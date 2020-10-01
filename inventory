@@ -1,0 +1,5 @@
+[dummy]
+127.0.0.[001:010]
+
+[all:vars]
+ansible_python_interpreter=${VIRTUAL_ENV}/bin/python

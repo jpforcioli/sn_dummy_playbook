@@ -1,0 +1,17 @@
+---
+- hosts: dummy
+  connection: local
+  vars:
+    n_sec: 2
+    you_need_to_fail: 127.0.0.007
+    dummy_list:
+      dummy_var_001: default_dummy_value_001
+      dummy_var_002: default_dummy_value_002
+      dummy_var_003: default_dummy_value_003
+      dummy_var_004: default_dummy_value_004
+      dummy_var_005: default_dummy_value_005
+
+  tasks:
+    - include_tasks: dummy_task.yml
+      loop: '{{ dummy_list | dict2items }}'
+      ignore_errors: yes

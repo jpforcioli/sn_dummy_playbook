@@ -1,0 +1,8 @@
+- name: Doing dummy iteration with variable '{{ item.key }}' and value '{{ item.value }}'
+  debug:
+    msg: Doing dummy iteration with variable '{{ item.key }}' and value '{{ item.value }}'
+  failed_when: ansible_host == you_need_to_fail
+
+- name: Pause for '{{ n_sec }}' second(s)
+  pause:
+    seconds: '{{ n_sec }}'
